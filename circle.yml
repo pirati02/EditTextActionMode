@@ -1,15 +1,15 @@
 general:
     artifacts:
-        - C://Users/b.gogia/AndroidStudioProjects/ConstraintLayout/app/build/outputs/apk
+        - C:/Users/b.gogia/AndroidStudioProjects/ConstraintLayout/app/build/outputs/apk
 
 machine:
     environment:
-        ANDROID_HOME: C://Users/b.gogia/AppData/Local/android/Sdk
+        ANDROID_HOME: C:/Users/b.gogia/AppData/Local/android/Sdk
 
 dependencies:
     override:
         - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0,android-25,extra-google-m2repository,extra-google-google_play_services,extra-android-support
-        - ANDROID_HOME=C://Users/b.gogia/AppData/Local/android/Sdk ./gradlew dependencies
+        - ANDROID_HOME=C:/Users/b.gogia/AppData/Local/android/Sdk ./gradlew dependencies
 
 test:
     override:

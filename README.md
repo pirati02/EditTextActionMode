@@ -1,4 +1,4 @@
-# FailureRepoForCi
+# EditTextActionMode
 
 >  editText = (AppCompatEditText) findViewById(R.id.edit_text);
 

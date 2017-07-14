@@ -1,4 +1,4 @@
-package baqari.dev.com.constraintlayout;
+package baqari.dev.com.constraintlayout.actions;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -8,12 +8,12 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-public class CopyPasteAction implements ActionMode.Callback {
+import baqari.dev.com.constraintlayout.R;
+
+public class CopyPasteAction extends BaseAction {
+
     private ActionResultListener actionResultListener;
-    private AppCompatEditText target;
-    private ClipboardManager clipboardManager;
 
     public CopyPasteAction(View view) {
         target = (AppCompatEditText) view;
@@ -27,7 +27,7 @@ public class CopyPasteAction implements ActionMode.Callback {
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
         menu.clear();
-        mode.getMenuInflater().inflate(R.menu.text_action_menu, menu);
+        mode.getMenuInflater().inflate(R.menu.copy_cut_paste_action_menu, menu);
         return true;
     }
 
@@ -45,7 +45,6 @@ public class CopyPasteAction implements ActionMode.Callback {
             clipboardManager.setPrimaryClip(ClipData.newPlainText("copied", text));
             if (actionResultListener != null)
                 actionResultListener.onResult(true, ActionType.COPY, text.toString());
-            onDestroyActionMode(mode);
         } else if (id == R.id.menu_item_cut) {
             clipboardManager.setPrimaryClip(ClipData.newPlainText("copied", text));
             target.setText(null);
@@ -60,11 +59,7 @@ public class CopyPasteAction implements ActionMode.Callback {
 
     }
 
-    public interface ActionResultListener {
-        void onResult(boolean success, ActionType type, String text);
-    }
-
-    public enum ActionType {
+    public enum ActionType implements BaseType {
         COPY, CUT
     }
 }

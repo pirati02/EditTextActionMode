@@ -3,20 +3,35 @@
     xmlns:apps="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/edit_text"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:background="#9dd"
         android:maxLines="1"
         android:padding="10dp"
         apps:layout_constraintLeft_toLeftOf="parent"
         apps:layout_constraintRight_toRightOf="parent"
-        apps:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
+        apps:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edit_text2"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#9dd"
+        android:maxLines="1"
+        android:padding="10dp"
+        apps:layout_constraintHorizontal_bias="0.0"
+        apps:layout_constraintLeft_toLeftOf="parent"
+        apps:layout_constraintRight_toRightOf="parent"
+        apps:layout_constraintTop_toBottomOf="@+id/edit_text" />
 
 </android.support.constraint.ConstraintLayout>

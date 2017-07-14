@@ -1,16 +1,30 @@
 package baqari.dev.com.constraintlayout;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatEditText;
+import android.util.Log;
 
+import static android.content.ContentValues.TAG;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+
+    AppCompatEditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String name = null;
-        String error = name.substring(0, 3);
+        editText = (AppCompatEditText) findViewById(R.id.edit_text);
+
+        CopyPasteAction action = new CopyPasteAction(editText);
+        editText.setCustomSelectionActionModeCallback(action);
+        action.setResultListener(new CopyPasteAction.ActionResultListener() {
+            @Override
+            public void onResult(boolean success, CopyPasteAction.ActionType type, String text) {
+                CopyPasteAction.ActionType actionType = type;
+                String copied = text;
+            }
+        });
     }
 }

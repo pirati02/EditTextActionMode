@@ -1,11 +1,6 @@
 package baqari.dev.com.constraintlayout.actions;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.os.Build;
 import android.support.v7.widget.AppCompatEditText;
-import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.TextAppearanceSpan;
@@ -16,9 +11,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import baqari.dev.com.constraintlayout.R;
-
-import static android.os.Build.VERSION.SDK;
-import static android.text.Html.FROM_HTML_MODE_LEGACY;
 
 public class TextStyleAction extends BaseAction {
 
@@ -36,6 +28,8 @@ public class TextStyleAction extends BaseAction {
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
         menu.clear();
         mode.getMenuInflater().inflate(R.menu.text_style_action_menu, menu);
+        mode.setTitle(null);
+        mode.setTitleOptionalHint(false);
         return true;
     }
 

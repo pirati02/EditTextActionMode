@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:apps="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.AppCompatEditText
@@ -14,10 +15,7 @@
         android:layout_marginTop="8dp"
         android:background="#9dd"
         android:maxLines="1"
-        android:padding="10dp"
-        apps:layout_constraintLeft_toLeftOf="parent"
-        apps:layout_constraintRight_toRightOf="parent"
-        apps:layout_constraintTop_toTopOf="parent" />
+        android:padding="10dp"  />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/edit_text2"
@@ -28,10 +26,6 @@
         android:layout_marginTop="8dp"
         android:background="#9dd"
         android:maxLines="1"
-        android:padding="10dp"
-        apps:layout_constraintHorizontal_bias="0.0"
-        apps:layout_constraintLeft_toLeftOf="parent"
-        apps:layout_constraintRight_toRightOf="parent"
-        apps:layout_constraintTop_toBottomOf="@+id/edit_text" />
+        android:padding="10dp"  />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -28,6 +28,8 @@ public class CopyPasteAction extends BaseAction {
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
         menu.clear();
         mode.getMenuInflater().inflate(R.menu.copy_cut_paste_action_menu, menu);
+        mode.setTitle(null);
+        mode.setTitleOptionalHint(false);
         return true;
     }
 
@@ -51,6 +53,12 @@ public class CopyPasteAction extends BaseAction {
             if (actionResultListener != null)
                 actionResultListener.onResult(true, ActionType.CUT, text.toString());
         }
+        else if (id == R.id.menu_item_paste) {
+            String copied = clipboardManager.getPrimaryClip().getItemAt(0).getText().toString();
+            target.setText(copied);
+            if (actionResultListener != null)
+                actionResultListener.onResult(true, ActionType.PASTE, text.toString());
+        }
         return false;
     }
 
@@ -60,6 +68,6 @@ public class CopyPasteAction extends BaseAction {
     }
 
     public enum ActionType implements BaseType {
-        COPY, CUT
+        COPY, CUT, PASTE
     }
 }

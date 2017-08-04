@@ -14,7 +14,7 @@
         
         TextStyleAction action1 = new TextStyleAction(editText2);
         editText2.setCustomSelectionActionModeCallback(action1);
-        action.setResultListener(new TextStyleAction.ActionResultListener() {
+        action1.setResultListener(new TextStyleAction.ActionResultListener() {
             @Override
             public void onResult(boolean success, BaseAction.BaseType type, String text) {
                 TextStyleAction.ActionType actionType = (TextStyleAction.ActionType) type;

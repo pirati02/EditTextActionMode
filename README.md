@@ -1,7 +1,7 @@
 # EditTextActionMode
 
->  editText = (AppCompatEditText) findViewById(R.id.edit_text);
-
+>  
+        editText = (AppCompatEditText) findViewById(R.id.edit_text);
         CopyPasteAction action = new CopyPasteAction(editText);
         editText.setCustomSelectionActionModeCallback(action);
         action.setResultListener(new CopyPasteAction.ActionResultListener() {
